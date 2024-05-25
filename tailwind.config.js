@@ -13,7 +13,7 @@ export default {
         'custom-dark': '50px 56px 1800px rgba(1, 1, 1, 1)',
     },
     colors: {
-      NewBlue:"#3788E1",
+      NewBlue:"#2563EB",
       highlight:"#AFF59B",
       white: "#fff",
       black: "#000000",
@@ -63,7 +63,7 @@ export default {
       },
       green:{
         5:"#C7F0D7",
-        500:"#22C55E"
+        500:"#1C9547"
       },
       caribbeangreen: {
         5: "#C1FFFD",
