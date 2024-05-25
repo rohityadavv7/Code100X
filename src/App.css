@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Dela+Gothic+One&family=Josefin+Sans&family=Kanit&family=Nunito:ital,wght@1,700&family=Roboto:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Dela+Gothic+One&family=Kanit&family=Nunito:ital,wght@1,700&family=Roboto:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Dela+Gothic+One&family=Kanit&family=Roboto:ital,wght@1,700&display=swap');
+
+.blob{
+  -webkit-box-shadow: 0px 0px 248px 156px rgba(37, 100, 235, 0.97);
+    -moz-box-shadow: 0px 0px 248px 156px rgba(37, 100, 235, 0.97);
+    box-shadow: 0px 0px 248px 156px rgba(37, 100, 235, 0.97);
+
+    animation: blobAnimate linear 6s infinite ;
+}
+
+@keyframes blobAnimate {
+
+  0%,
+  100% {
+    border-radius: 50% 50% 50% 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    left: 0px;
+
+  }
+
+  25% {
+    border-radius: 60% 40% 70% 30%;
+    transform: translate(-45%, -55%) rotate(15deg);
+    left: 20px;
+  }
+
+  50% {
+    border-radius: 40% 60% 30% 70%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    
+  }
+
+  75% {
+    border-radius: 70% 30% 60% 40%;
+    transform: translate(-55%, -45%) rotate(-15deg);
+    right: 0px;
+  }
+}
