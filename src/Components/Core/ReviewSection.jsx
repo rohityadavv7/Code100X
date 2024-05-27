@@ -124,6 +124,8 @@ function ReviewSection() {
                 
             </div>
         </div>
+
+        <div className='divider mt-20'></div>
         
 
     </div>

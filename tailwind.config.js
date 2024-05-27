@@ -13,12 +13,18 @@ export default {
         'custom-dark': '50px 56px 1800px rgba(1, 1, 1, 1)',
     },
     colors: {
+      bl:"#C8E2EB",
+      
       NewBlue:"#2563EB",
       highlight:"#AFF59B",
       white: "#fff",
       black: "#000000",
-      transparent: "#ffffff00",
+      lightBlack: "#191817",
       cream:"#F7F4ED",
+      indigo:{
+        400:"#4F46E5",
+        500:"#6366F1"
+      },
       richblack: {
         5: "#F1F2FF",
         25: "#DBDDEA",

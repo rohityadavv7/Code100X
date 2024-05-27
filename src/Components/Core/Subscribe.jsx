@@ -3,7 +3,7 @@ import { MdOutlineUnsubscribe } from "react-icons/md";
 
 function Subscribe() {
   return (
-    <div className='w-11/12 mx-auto flex space-x-24 mt-24 p-24'>
+    <div className='w-11/12 mx-auto flex space-x-24 mt-20 p-24'>
         <div>
             <div
                 class="group flex flex-col justify-start items-start gap-2 w-96 h-56 duration-500 relative rounded-lg p-4 bg-[#A855F7] hover:-translate-y-2 hover:shadow-xl shadow-[#C084FC]"
@@ -62,6 +62,7 @@ function Subscribe() {
             </div>
 
         </div>
+        
     </div>
   )
 }
