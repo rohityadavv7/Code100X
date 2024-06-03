@@ -5,10 +5,10 @@ import { themeAtom } from '../Recoil/Store/Atoms/ThemeAtom'
 function HeroSection() {
     const theme = useRecoilValue(themeAtom)
   return (
-    <div className="hero font-normal flex gap-4 mt-20 pt-8 justify-between w-11/12 mx-auto">
+    <div className="hero font-normal flex gap-4 -z-0 mt-20 pt-8 justify-between w-11/12 mx-auto">
         
         {/* LEFT_PART */}
-        <div className="hero-content flex flex-col  p-8 w-[50%]">
+        <div className="hero-content flex flex-col  p-8 w-[50%] -z-10">
             <div className='flex flex-col space-y-3'>
                 <h1 className="text-5xl font-bold">Code100X,<br/></h1>
                 <p className='text-5xl font-extrabold text-[#2563EB]'> <span>Infinite Learning</span></p>
@@ -31,15 +31,15 @@ function HeroSection() {
             {/* CARD-1 */}
             <div>
                 <div
-                class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform "
+                className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform transform "
                 >
-                <div class="p-1 bg-green-200"></div>
-                <div class="p-8">
-                    <h2 class="text-3xl font-bold text-richblack-800 mb-4">Pro Plan</h2>
-                    <p class="text-richblack-600 mb-6">Perfect for growing businesses</p>
-                    <p class="text-4xl font-bold text-richblack-800 mb-6">$49.99</p>
-                    <ul class="text-md text-richblack-500 mb-6">
-                    <li class="mb-2 flex items-center">
+                <div className="p-1 bg-green-200"></div>
+                <div className="p-8">
+                    <h2 className="text-3xl font-bold text-richblack-800 mb-4">Pro Plan</h2>
+                    <p className="text-richblack-600 mb-6">Perfect for growing businesses</p>
+                    <p className="text-4xl font-bold text-richblack-800 mb-6">$49.99</p>
+                    <ul className="text-md text-richblack-500 mb-6">
+                    <li className="mb-2 flex items-center">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"

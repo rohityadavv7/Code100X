@@ -5,11 +5,14 @@ import { RiMenu2Line } from "react-icons/ri";
 import { FaGithub } from "react-icons/fa";
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { themeAtom } from '../Recoil/Store/Atoms/ThemeAtom';
+import { Link } from 'react-router-dom';
+import { tokenAtom } from '../Recoil/Store/Atoms/TokenAtom';
+import { SignedIn, UserButton } from '@clerk/clerk-react';
 
 
 function Navbar() {
     const [theme,setTheme] = useRecoilState(themeAtom)
-
+    const token = useRecoilValue(tokenAtom);
     useEffect(() => {
         setTheme(theme);
         localStorage.setItem("theme",theme);
@@ -28,21 +31,29 @@ function Navbar() {
     }
 
   return (
-    <div className={`${theme === "black" ? "border-b-2" : "border-b-2"} navbar bg-base-100 w-11/12 mx-auto pb-4 mt-2 `}>
+    <div className={`${theme === "black" ? "border-b-2" : "border-b-2"} z-1000 navbar bg-base-100 w-11/12 mx-auto pb-4 mt-2 `}>
         {/* Drawer */}
-        <div className="drawer w-[50%]">
+        <div className="drawer w-[50%] z-1000">
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 {/* Page content here */}
                 <label htmlFor="my-drawer" className="btn  drawer-button rounded-lg"> <RiMenu2Line className='text-xl'/>Menu</label>
             </div> 
-            <div className="drawer-side">
-                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-6 flex flex-col space-y-2 rounded-md font-normal text-xl w-80 min-h-full bg-base-200 text-base-content">
+            <div className="drawer-side z-1000">
+                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay z-1000"></label>
+                <ul className="menu z-1000 p-6 flex flex-col space-y-2 rounded-md font-normal text-xl w-80 min-h-full bg-base-200 text-base-content">
                 {/* Sidebar content here */}
-                <li><a>Home</a></li>
+                <li>
+                    <Link to={"/"}>
+                        Home
+                    </Link>
+                </li>
                 <div className="divider"></div> 
-                <li><a>View Courses</a></li>
+                <li>
+                    <Link to={"/courses"}>
+                        View Courses
+                    </Link>
+                </li>
                 <div className="divider"></div> 
                 <li><a>Testimonials</a></li>
                 <div className="divider"></div> 
@@ -65,9 +76,18 @@ function Navbar() {
             {/* <button className="btn btn-ghost btn-circle">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
             </button> */}
+
+
+            {/* PROFILE-LOGOUT-BUTTON */}
+            <div>
+                <SignedIn>
+                    <UserButton/>
+                </SignedIn>
+            </div>
+
              {/* Github */}
             <button
-                class="group flex justify-center items-center gap-2 group-hover:before:duration-500 
+                className="group flex justify-center items-center gap-2 group-hover:before:duration-500 
                 group-hover:after:duration-500 after:duration-500 hover:border-neutral-900 duration-500 
                 hover:duration-500 underline underline-offset-2 hover:underline hover:underline-offset-4 
                 origin-left hover:decoration-2 hover:text-neutral-300 relative bg-neutral-900 px-6 py-2 
@@ -76,7 +96,7 @@ function Navbar() {
                 after:rounded-full after:blur-lg hover:after:animate-pulse"
                 >
                 <svg
-                    class="w-6 h-6 fill-neutral-50"
+                    className="w-6 h-6 fill-neutral-50"
                     height="100"
                     preserveAspectRatio="xMidYMid meet"
                     viewBox="0 0 100 100"
@@ -86,7 +106,7 @@ function Navbar() {
                     y="0"
                 >
                     <path
-                    class="svg-fill-primary"
+                    className="svg-fill-primary"
                     d="M50,1.23A50,50,0,0,0,34.2,98.68c2.5.46,3.41-1.09,3.41-2.41s0-4.33-.07-8.5c-13.91,3-16.84-6.71-16.84-6.71-2.28-5.77-5.55-7.31-5.55-7.31-4.54-3.1.34-3,.34-3,5,.35,7.66,5.15,7.66,5.15C27.61,83.5,34.85,81.3,37.7,80a10.72,10.72,0,0,1,3.17-6.69C29.77,72.07,18.1,67.78,18.1,48.62A19.34,19.34,0,0,1,23.25,35.2c-.52-1.26-2.23-6.34.49-13.23,0,0,4.19-1.34,13.75,5.13a47.18,47.18,0,0,1,25,0C72.07,20.63,76.26,22,76.26,22c2.72,6.89,1,12,.49,13.23a19.28,19.28,0,0,1,5.14,13.42c0,19.21-11.69,23.44-22.83,24.67,1.8,1.55,3.4,4.6,3.4,9.26,0,6.69-.06,12.08-.06,13.72,0,1.34.9,2.89,3.44,2.4A50,50,0,0,0,50,1.23Z"
                     ></path>
                 </svg>
