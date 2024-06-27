@@ -8,7 +8,7 @@ function UserDashboard() {
 
     const {user, isSignedIn} = useUser()
     const {firstName, lastName} = user;
-    console.log("user -> ", user);
+    // console.log("user -> ", user);
 
     const theme = useRecoilValue(themeAtom);
 

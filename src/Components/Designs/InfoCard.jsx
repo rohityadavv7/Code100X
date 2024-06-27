@@ -4,7 +4,7 @@ import InstaBtn from './InstaBtn'
 import GithubBtn from './GithubBtn'
 function InfoCard({theme}) {
   return (
-    <div className="flex items-center justify-center mt-4">
+    <div className="flex items-center justify-center mt-4 z-50">
         <div
             className={`${theme === "dark" ?"bg-gray-600" :"bg-black"} flex flex-col justify-center items-center  text-white rounded-lg shadow-lg p-6 w-60`}
         >

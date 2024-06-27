@@ -13,7 +13,7 @@ function Courses() {
   return (
     <div>
         {
-            isSignedIn ? <div>
+            isSignedIn ? <div className=''>
                 <AllCourses/>
             </div>
             :

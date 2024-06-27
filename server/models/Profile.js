@@ -10,7 +10,6 @@ const profileSchema = new mongoose.Schema({
     },
     DOB:{
         type:String,
-        
     },
     contact:{
         type:Number

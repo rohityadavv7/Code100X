@@ -7,7 +7,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { themeAtom } from '../Recoil/Store/Atoms/ThemeAtom';
 import { Link } from 'react-router-dom';
 import { tokenAtom } from '../Recoil/Store/Atoms/TokenAtom';
-import { SignedIn, UserButton } from '@clerk/clerk-react';
+import { SignIn, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
 
 
 function Navbar() {
@@ -31,17 +31,17 @@ function Navbar() {
     }
 
   return (
-    <div className={`${theme === "black" ? "border-b-2" : "border-b-2"} z-1000 navbar bg-base-100 w-11/12 mx-auto pb-4 mt-2 `}>
+    <div className={`${theme === "black" ? "border-b-2" : "border-b-2"}  navbar bg-base-100 w-11/12 mx-auto pb-4 mt-2 `}>
         {/* Drawer */}
-        <div className="drawer w-[50%] z-1000">
+        <div className="drawer w-[50%] z-50 ">
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content">
+            <div className="drawer-content z-50">
                 {/* Page content here */}
                 <label htmlFor="my-drawer" className="btn  drawer-button rounded-lg"> <RiMenu2Line className='text-xl'/>Menu</label>
             </div> 
-            <div className="drawer-side z-1000">
-                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay z-1000"></label>
-                <ul className="menu z-1000 p-6 flex flex-col space-y-2 rounded-md font-normal text-xl w-80 min-h-full bg-base-200 text-base-content">
+            <div className="drawer-side z-50">
+                <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay z-50"></label>
+                <ul className="menu z-50 p-6 flex flex-col space-y-2 rounded-md font-normal text-xl w-80 min-h-full bg-base-200 text-base-content">
                 {/* Sidebar content here */}
                 <li>
                     <Link to={"/"}>
@@ -67,7 +67,9 @@ function Navbar() {
         </div>
 
         <div className="navbar-center">
-            <a className="btn btn-ghost text-xl rounded-lg font-normal font-semibold">Code100X</a>
+            <Link to="/">
+                <p className="btn btn-ghost text-xl rounded-lg font-normal font-semibold">Code100X</p>
+            </Link>
         </div>
 
        
@@ -79,10 +81,20 @@ function Navbar() {
 
 
             {/* PROFILE-LOGOUT-BUTTON */}
-            <div>
+            <div className=''>
                 <SignedIn>
                     <UserButton/>
                 </SignedIn>
+
+                <Link to="/login">
+                    <SignedOut>
+                        <button 
+                            className="relative py-2 px-8 text-black text-base font-bold nded-full overflow-hidden bg-white rounded-full transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-NewBlue before:to-NewBlue before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-full hover:before:left-0"
+                                >
+                                Sign in
+                        </button>
+                    </SignedOut>
+                </Link>
             </div>
 
              {/* Github */}

@@ -7,7 +7,7 @@ export default function DashboardLayout() {
     const { userId, isLoaded } = useAuth()
     const navigate = useNavigate()
 
-    console.log('test', userId)
+    // console.log('test', userId)
 
     React.useEffect(() => {
         if (isLoaded && !userId) {

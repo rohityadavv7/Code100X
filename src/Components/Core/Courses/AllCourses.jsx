@@ -8,7 +8,7 @@ function AllCourses() {
     <div>
       {
         isSignedIn?
-        (<DisplayCourses className="-z-1000"/>)
+        (<DisplayCourses className="-z-50"/>)
         :
         (<div className="flex flex-col gap-4 w-52">
             <div className="skeleton h-32 w-full"></div>

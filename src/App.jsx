@@ -15,6 +15,8 @@ import { SignedIn,SignedOut,RedirectToSignIn } from '@clerk/clerk-react'
 import Dashboard from './Components/Core/Dashboard/Dashboard'
 import DashboardLayout from './Components/Core/Dashboard/Dashboard'
 import UserDashboard from './Components/Core/Dashboard/UserDashboard'
+import SignupForm from './Components/Forms/SignupForm'
+import LoginForm from './Components/Forms/LoginForm'
 
 function App() {
 
@@ -41,6 +43,10 @@ function App() {
              
 
         </Route>
+
+        <Route path='/signup' element={<SignupForm/>}/>
+
+        <Route path='/login' element={<LoginForm/>}/>
           
       </Routes>
     </div>
