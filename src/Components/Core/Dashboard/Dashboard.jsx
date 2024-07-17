@@ -19,9 +19,7 @@ export default function DashboardLayout() {
 
     return (
         <div>
-               
                 <Outlet/>
-
         </div>
     )
 }

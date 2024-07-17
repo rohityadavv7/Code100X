@@ -2,22 +2,18 @@ const mongoose = require("mongoose");
 const { Schema } = require("zod");
 
 const userSchema = new mongoose.Schema({
-    firstName:{
+    id:{
         type:String,
-    },
-    lastName:{
-        type:String,
+        required: true,
     },
     email:{
         type:String,
-    },
-    password:{
-        type:String,
         required:true
     },
-    additionalDetails:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Profile",
+    account_Type:{
+        type:String,
+        required: true,
+        default:"Student"
     }
 },{timestamps:true})
 

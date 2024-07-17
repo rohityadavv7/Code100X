@@ -10,6 +10,7 @@ import { ClerkProvider } from '@clerk/clerk-react'
 // Import your publishable key
 // const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+const frontendapi = import.meta.env.frontendapi
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key")
@@ -17,14 +18,14 @@ if (!PUBLISHABLE_KEY) {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-
-    <BrowserRouter>
-      <ClerkProvider publishableKey={PUBLISHABLE_KEY}  signUpFallbackRedirectUrl="/dashboard/user">
-          <RecoilRoot>
-            <App />
-          </RecoilRoot>
-      
-      </ClerkProvider>
-    </BrowserRouter>
+    {/* <ClerkProvider publishableKey={PUBLISHABLE_KEY} frontenapi={frontendapi}  > */}
+      <BrowserRouter>
+        
+            <RecoilRoot>
+              <App />
+            </RecoilRoot>
+        
+      </BrowserRouter>
+    {/* </ClerkProvider> */}
   </React.StrictMode>,
 )

@@ -4,11 +4,14 @@ import {useAuth, useUser} from "@clerk/clerk-react"
 import { themeAtom } from '../../../Recoil/Store/Atoms/ThemeAtom';
 import { useRecoilValue } from 'recoil';
 
+import Skeleton from '../../Designs/Skeleton';
+
 function UserDashboard() {
 
     const {user, isSignedIn} = useUser()
+    
     const {firstName, lastName} = user;
-    // console.log("user -> ", user);
+    console.log("user in dashboard -> ", user);
 
     const theme = useRecoilValue(themeAtom);
 
@@ -18,7 +21,8 @@ function UserDashboard() {
     
 
   return (
-    <div className='w-11/12 mx-auto grid mt-16 grid-cols-10 font-normal text-center'>
+    
+        (<div className='w-11/12 mx-auto grid mt-16 grid-cols-10 font-normal text-center'>
        {/* LEFT-PART */}
         <div className='bg grid col-span-3 items-center rounded-lg'>
             <div class="bg-lightBlack w-[80%] min-h-[500px] rounded-lg">
@@ -50,8 +54,9 @@ function UserDashboard() {
                 
             </h1>
         </div>
-    </div>
-  )
+    </div>)
+    )
+  
 }
 
 export default UserDashboard
